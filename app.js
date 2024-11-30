@@ -28,11 +28,11 @@ function checkGuess() {
 function modifyHtml(tag, valor) {
     let campo = document.querySelector(tag);
     campo.innerHTML = valor;
-    // Script in line 7 of html file to be able to use this variation
-    responsiveVoice.speak(valor, 'Brazilian Portuguese Female', {rate:1.2});
+    // Script in line 7 of html file to be able to use this variation , worked on desktop but not on mobile
+    //responsiveVoice.speak(valor, 'Brazilian Portuguese Female', {rate:1.2});
 
-    // Native js instead
-    /*if ('speechSynthesis' in window) {        
+    //Native js instead
+    if ('speechSynthesis' in window) {        
         let utterance = new SpeechSynthesisUtterance(valor);
         utterance.lang = 'pt-BR'; 
         utterance.rate = 1.2; 
@@ -41,7 +41,7 @@ function modifyHtml(tag, valor) {
     }
     else {
         console.log("Web Speech API não suportada neste navegador.");
-    }*/
+    }
 }
 // Function that generates a random number for our game using Math.floor instead of parseInt because is faster
 function randomSecretNumber(min, max) {
